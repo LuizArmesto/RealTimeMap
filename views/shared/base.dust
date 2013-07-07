@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{+pageTitle}Real Time Map{/pageTitle}</title>
+    {+pageStyles/}
+    {+pageScripts/}
+  </head>
+  <body>
+    {+pageContent/}
+  </body>
+</html>
