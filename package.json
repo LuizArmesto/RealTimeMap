@@ -1,0 +1,14 @@
+{
+    "name": "RealTimeMap",
+    "version": "0.0.1",
+    "description": "Real time map",
+    "dependencies": {
+        "express": "latest",
+        "dust": "latest",
+        "socket.io": "latest",
+        "backbone": "latest",
+        "backbone.io": "latest",
+        "requirejs": "latest"
+    },
+    "author": "Luiz Armesto"
+}
