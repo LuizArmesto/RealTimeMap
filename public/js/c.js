@@ -1,4 +1,4 @@
-requirejs.config({
+requirejs = {
   paths: {
     'tpl': '../tpl',
     'text': 'lib/require/text',
@@ -37,4 +37,4 @@ requirejs.config({
       exports: 'Backbone.io'
     }
   }
-});
+};

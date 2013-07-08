@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>{+pageTitle}Real Time Map{/pageTitle}</title>
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
     {+pageStyles/}
     {+pageScripts/}
   </head>

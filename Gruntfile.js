@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
+      all: ['Gruntfile.js', 'app.js', 'app/**/*.js', 'controllers/**/*.js', 'public/js/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -15,16 +16,21 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        browser: true
+        browser: true,
+        globals: {
+          require: true,
+          define: true,
+          module: true,
+          exports: true,
+          process: true,
+          __dirname: true,
+          requirejs: true,
+          describe: true,
+          expect: true,
+          it: true,
+          console: true
+        }
       },
-      globals: {
-        require: true,
-        define: true,
-        requirejs: true,
-        describe: true,
-        expect: true,
-        it: true
-      }
     },
     requirejs: {
       compile: {
@@ -35,7 +41,8 @@ module.exports = function(grunt) {
           out: "public/js.built/main.js",
           optimize: "uglify2",
           generateSourceMaps: true,
-          preserveLicenseComments: false
+          preserveLicenseComments: false,
+          stubModules: ['rdust']
         }
       }
     }

@@ -1,4 +1,4 @@
-var express = require('express')
+var express = require('express'),
     http = require('http'), 
     path = require('path'), 
     routes = require('./app/routes'),
@@ -28,7 +28,7 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 

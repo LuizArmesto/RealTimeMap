@@ -1,1 +1,10 @@
 {>"shared/base"/}
+
+{<pageScripts}
+  <script src="/js/c.js"></script>
+  <script data-main="/js/main" src="/js/lib/require.js"></script>
+{/pageScripts}
+
+{<pageContent}
+  <div id="main" class="fullscreen"></div>
+{/pageContent}
