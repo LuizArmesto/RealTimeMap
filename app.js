@@ -32,10 +32,16 @@ if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
-mongoose.connect('mongodb://localhost/Points');
+mongoose.connect('mongodb://localhost/realtimemap');
 mongoose.connection.on('open', function () {
-   console.log('Connected to Mongoose') ;
+  console.log('Connected to Mongoose') ;
 });
+var Schema = new mongoose.Schema({
+  type: String,
+  geometry: Object,
+  properties: Object
+});
+var Point = mongoose.connection.model('Point', Schema);
  
 routes.initialize(app);
 
@@ -44,6 +50,6 @@ server.listen(app.get('port'), process.env.IP, function () {
 });
 
 var backend = backboneio.createBackend();
-backend.use(backboneio.middleware.memoryStore());
+backend.use(backboneio.middleware.mongooseStore(Point));
 
 backboneio.listen(server, { mybackend: backend });

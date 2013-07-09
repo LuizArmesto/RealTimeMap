@@ -11,7 +11,14 @@ define(function (require) {
 
   BackboneIO.connect();
 
+  var Point = BackboneLeaflet.GeoModel.extend({
+    idAttribute: '_id',
+    keepId: true
+  });
+
   var Points = BackboneLeaflet.GeoCollection.extend({
+    model: Point,
+    url: '/api/points',
     backend: 'mybackend',
     initialize: function () {
       var that = this;
@@ -29,6 +36,8 @@ define(function (require) {
   });
 
   var points = new Points();
+  window.points = points;
+  points.fetch();
 
   var mainView = new MainView({
     el: '#main',
