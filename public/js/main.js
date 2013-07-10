@@ -21,17 +21,7 @@ define(function (require) {
     url: '/api/points',
     backend: 'mybackend',
     initialize: function () {
-      var that = this;
-      this.bind('backend:create', function (model) {
-        console.log(model);
-        that.add(model);
-      });
-      this.bind('backend:update', function (model) {
-        that.get(model.id).set(model);
-      });
-      this.bind('backend:delete', function (model) {
-        that.remove(model.id);
-      });
+      this.bindBackend();
     }
   });
 
