@@ -29,8 +29,11 @@ define(function (require) {
   BackboneIO.connect();
 
   var themes = require('themes'),
+      mobile = require('mobile'),
       MainView = require('views/main');
 
+  // Prepares to run correctly on mobile phones
+  mobile.initialize();
   // Loads the default theme
   themes.loadTheme('default');
 
