@@ -19,7 +19,8 @@ define(function (require) {
       _ = require('underscore'),
       Backbone = require('backbone');
 
-  var MapView = require('views/map');
+  var MapView = require('views/map'),
+      TopbarView = require('views/topbar');
 
 
   // Loads the templates used by MainView
@@ -38,9 +39,11 @@ define(function (require) {
       this.mapView = new MapView({
         collection: this.collection
       });
+      this.topbarView = new TopbarView();
       // Creates an array containing all subviews
       this.subviews = [
-        {view: this.mapView, el: '#map'}
+        { view: this.mapView, el: '#map' },
+        { view: this.topbarView, el: '#topbar' }
       ]
     },
 
