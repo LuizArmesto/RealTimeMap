@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Real time map",
   "author": "Luiz Armesto",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuizArmesto/RealTimeMap"
+  },
   "scripts": {
     "start": "node app.js"
   },

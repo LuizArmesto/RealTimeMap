@@ -7,13 +7,17 @@ define(function (require) {
 
   var utils = require('utils');
 
-  utils.loadCss('/css/leaflet.css');
-
   var MapView = BackboneLeaflet.MapView.extend({
     className: 'fullscreen',
     events: {
       'click map': 'onClick'
     },
+
+    initialize: function () {
+      // Loads the required style sheets
+      utils.loadCss('/css/leaflet.css');
+    },
+
     onClick: function (e) {
       var lat = e.latlng.lat,
           lng = e.latlng.lng,
@@ -27,7 +31,7 @@ define(function (require) {
           this._n = ++n;
     }
   });
-  
+
   return MapView;
 });
 

@@ -1,7 +1,7 @@
 {>"shared/base"/}
 
 {<pageScripts}
-  <script src="/js/c.js"></script>
+  <script src="/js/config.js"></script>
   <script data-main="/js/main" src="/js/lib/require.js"></script>
 {/pageScripts}
 

@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      all: ['Gruntfile.js', 'app.js', 'app/**/*.js', 'controllers/**/*.js', 'public/js/*.js'],
+      all: ['*.js', 'app/**/*.js', 'controllers/**/*.js', 'public/js/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       compile: {
         options: {
           baseUrl: "public/js",
-          mainConfigFile: "public/js/config.js",
+          mainConfigFile: "public/js/build.js",
           name: "main",
           out: "public/js.built/main.js",
           optimize: "uglify2",

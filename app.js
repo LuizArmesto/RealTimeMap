@@ -1,6 +1,6 @@
 var express = require('express'),
-    http = require('http'), 
-    path = require('path'), 
+    http = require('http'),
+    path = require('path'),
     routes = require('./app/routes'),
     mongoose = require('mongoose'),
     backboneio = require('backbone.io');
@@ -42,7 +42,7 @@ var Schema = new mongoose.Schema({
   properties: Object
 });
 var Point = mongoose.connection.model('Point', Schema);
- 
+
 routes.initialize(app);
 
 server.listen(app.get('port'), process.env.IP, function () {

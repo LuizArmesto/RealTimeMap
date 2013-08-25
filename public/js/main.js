@@ -1,3 +1,21 @@
+/**
+ * The App main module.
+ *
+ * This module contains the code responsible to initialize the app.
+ * Should be set to 'data-main' attribute of `RequireJS` script tag.
+ *
+ * @module main
+ *
+ * @example
+ * <html>
+ *   <head>
+ *     <script src="/js/config.js"></script>
+ *     <script data-main="/js/main" src="/js/lib/require.js"></script>
+ *   </head>
+ * </html>
+ *
+ * @author Luiz Armesto
+ */
 define(function (require) {
   'use strict';
 
@@ -5,11 +23,16 @@ define(function (require) {
       BackboneLeaflet = require('backbone.leaflet'),
       BackboneIO = require('backbone.io');
 
+  // Configures required libs
   Leaflet.Icon.Default.imagePath = '/js/lib/images';
 
-  var MainView = require('views/main');
-
   BackboneIO.connect();
+
+  var themes = require('themes'),
+      MainView = require('views/main');
+
+  // Loads the default theme
+  themes.loadTheme('default');
 
   var Point = BackboneLeaflet.GeoModel.extend({
     idAttribute: '_id',

@@ -1,3 +1,15 @@
+/*
+ * Leaflet mods
+ */
+
+.leaflet-top {
+    top: 50px !important;  /* Should be the same value of topbar height */
+}
+
+/*
+ * Main layout
+ */
+
 html, body {
   height: 100%;
   padding: 0;
@@ -8,4 +20,13 @@ html, body {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.topbar {
+  display: block;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  margin-bottom: -50px;  /* Makes the topbar be in the front of main map */
 }
