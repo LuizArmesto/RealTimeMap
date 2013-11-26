@@ -65,7 +65,7 @@ define(function (require) {
           subview.view.render();
         });
       });
-
+      this.mapView.map.invalidateSize();
       this;
     }
 
